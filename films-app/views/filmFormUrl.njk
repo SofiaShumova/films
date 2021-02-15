@@ -1,0 +1,30 @@
+{% extends "./partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="./styles/form.css">
+{% endblock %}
+{%block main %}
+
+    <form id="form" class="form" action="/filmurl" method="post">
+        <h1>Добавить фильм</h1>
+        <div class="box">
+            <label class="label" for="name">Название: </label>
+            <input class="input input-text" id="filmname" type="text" name="name">
+        </div>
+        <div class="box">
+            <label class="label"  for="video">Ссылка на видео: </label>
+            <input class="input input-text" id="video" type="text" name="video">
+        </div>
+        <div class="box">
+            <label class="label"  for="image">Url-картинки: </label>
+            <input class="input input-text" type="text" name="image"  id="image">
+        </div>
+        <div class="box">
+            <label class="label"  for="description">Описание: </label>
+            <textarea class="textarea" id="desc" name="description"></textarea>
+        </div>
+        <button class="button" type="submit">Отправить</button>
+        <button class="button" type="reset">Очистить</button>
+    </form>
+    <script src="./scripts/form-handler-url.js"></script>
+{% endblock %}
+{# DONE: set styles for elemnets forms url#}

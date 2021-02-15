@@ -1,0 +1,30 @@
+{% extends "./head.njk" %}
+{%block styles %}
+    <link rel="stylesheet" href="/styles/template.css">
+    {%block style %}{% endblock %}
+{% endblock %}
+{%block content %}
+    <header class="header">
+        <a href="/" class="link-nostyle">
+            <div class="logo-block">
+                <img src="/img/clapperboard.svg" alt="films" class="logo-block__img">
+                <span class="logo-block__name">Movies</span>
+            </div>
+        </a>
+        <nav class="nav">
+
+            <ul class="nav__list">
+                {% for item in menu.nav %}
+                    <li class="nav__item">
+                        <a href="{{item.path}}" class="nav__link link-nostyle {% if item.title === menu.selected %} nav__link_selected {% endif %}">
+                            <span class="nav__text">{{item.title}}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+
+    {%block main%}{%endblock%}
+
+    {% endblock %}

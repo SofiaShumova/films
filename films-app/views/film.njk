@@ -1,0 +1,19 @@
+{% extends "./partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="../../styles/film.css">
+{% endblock %}
+{%block main %}
+    <div class="film">
+        <div class="film__decription-block">
+            <img class="film__image" src="{{film.image}}" alt="{{film.name}}">
+            <div class="film__text-block">
+                <h1 class="film__name">{{film.name}}</h1>
+                <p class="film__description">{{film.description}}</p>
+                <a id="{{film._id}}" {% if (film.favorite===false) or (film.favorite === true) %} onclick="return handlerLink(event)" {%else%} href="/favorite/{{film._id}}" {% endif %} class="film__fav-link link-nostyle {% if film.favorite %}catalogy__fav-link_selected {% endif %} "></a>
+            </div>
+        </div>
+        <h2 class="film__watch-title">Смотреть онлайн {{film.name}}</h2>
+        <iframe class="film__frame" src="{{film.video}}" frameborder="0"></iframe>
+    </div>
+    <script src="/scripts/fetchFavorite.js"></script>
+{% endblock %}

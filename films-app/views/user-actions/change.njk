@@ -1,0 +1,24 @@
+{% extends "../partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="/styles/login.css">
+{% endblock %}
+{%block main %}
+    <div class="login">
+        <h1 class="login__title">{{action.title}}</h1>
+        <form id="mainForm" class="login__form" action="{{action.path}}" method="{{action.method}}">
+            {% for input in action.inputs %}
+                <div class="login__box">
+                    <label class="login__label  change__label {% if input.type=='file' %}login__label_file{% endif %}" for="{{input.name}}">{{input.title}}</label>
+                    <input class="login__input {% if input.type=='file' %}login__button_file{% endif %}" type="{{input.type}}" id="{{input.name}}" name="{{input.name}}">
+                </div>
+            {% endfor %}
+            <div class="login__box">
+                <button class="login__button" type="submit">Отправить</button>
+                <button class="login__button" type="reset">Очистить</button>
+            </div>
+        </form>
+    </div>
+    {% if action.script != null %}
+        <script src="/scripts/{{action.script}}.js"></script>
+    {% endif %}
+{% endblock %}

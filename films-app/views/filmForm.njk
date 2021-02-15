@@ -1,0 +1,26 @@
+{% extends "./partials/template.njk" %}
+{%block style %}{% endblock %}
+{%block main %}
+    <h1>Добавить фильм</h1>
+    <form id="form" onsubmit="return sendRequest(event)">
+        <div class="box">
+            <label for="name">Name: </label>
+            <input id="filmname" type="text" name="name">
+        </div>
+        <div class="box">
+            <label for="description">Description: </label>
+            <textarea id="desc" name="description"></textarea>
+        </div>
+        <div class="box">
+            <label for="video">Link on video: </label>
+            <input id="video" type="text" name="video">
+        </div>
+        <div class="box">
+            <label for="image">Image: </label>
+            <input type="file" name="image"  id="image">
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+    <script src="./scripts/form-handler.js"></script>
+{% endblock %}
+{# DONE: set styles for elemnets forms #}

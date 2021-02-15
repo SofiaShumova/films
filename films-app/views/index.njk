@@ -1,0 +1,43 @@
+{% extends "./partials/head.njk" %}
+{%block styles %}
+    <link rel="stylesheet" href="./styles/index.css">
+{% endblock %}
+{%block content %}
+    <header class="header">
+        <a href="/" class="link-nostyle">
+            <div class="logo-block">
+                <img src="/img/clapperboard.svg" alt="films" class="logo-block__img">
+                <span class="logo-block__name">Movies</span>
+            </div>
+        </a>
+    </header>
+    <div class="main-block">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/catalogy" class="nav__link">
+                        <span class="nav__text">Каталог</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="/favorite" class="nav__link">
+                        <span class="nav__text">Избранное</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="/login" class="nav__link">
+                        <span class="nav__text">Кабинет</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">
+                        <span class="nav__text">О сервисе</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main class="main">
+            <img src="/img/image.png" alt="films watch" class="main__img">
+        </main>
+    </div>
+{% endblock %}

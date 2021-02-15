@@ -1,0 +1,7 @@
+{% extends "./partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="styles/error.css">
+{% endblock %}
+{%block main %}
+    <h1 class="message-error">{{message}}</h1>
+{% endblock %}

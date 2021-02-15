@@ -1,0 +1,31 @@
+{% extends "./partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="/styles/login.css">
+{% endblock %}
+{%block main %}
+    <div class="login">
+        <h1 class="login__title">{{actionTitle}}</h1>
+        <form id="mainForm" class="login__form" action="/remove" method="post">
+            <div class="login__box">
+                <label class="logim__label" for="film"></label>
+                <select class="login__select" name="film" id="film">
+                    {% for item in films %}
+                        <option class="login__option" value="{{item._id}}" >
+                            {# <img src="{{item.image}}" alt="{{item.name}}"> #}
+                            <div class="login__option-block">
+                                <h3 class="login__name-film">{{item.name}}</h3>
+                                {# <p class="login__text-film">{{item.description}}</p> #}
+                            </div>
+                        </option>
+
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="login__box">
+                <button class="login__button" type="submit">Удалить</button>
+                <button class="login__button" type="reset">Очистить</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

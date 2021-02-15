@@ -1,0 +1,47 @@
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    margin-right: 20px;
+    font-family: inherit;
+}
+
+.input,
+.textarea {
+    font-family: inherit;
+    border-radius: 5px;
+    padding: 10px 5px;
+    border: none;
+    width: 400px;
+}
+
+.input-text {}
+
+.textarea {
+    height: 100px;
+}
+
+.button {
+    padding: 10px 50px;
+    background: white;
+    border: none;
+    font-family: inherit;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background: rgba(10, 53, 66, 0.7);
+    color: white;
+    border: 1px solid white;
+}

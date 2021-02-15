@@ -1,0 +1,9 @@
+#logo__block {
+    display: flex;
+    align-items: center;
+}
+
+#icon {
+    width: 50px;
+    margin-right: 10px;
+}

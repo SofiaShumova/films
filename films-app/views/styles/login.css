@@ -1,0 +1,100 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__title {}
+
+.login__box {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.login__button {
+    padding: 15px 35px;
+    background: #0A3542;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.login__button:hover {
+    background: white;
+    color: #0A3542;
+    border: 1px solid white;
+}
+
+.login__label {
+    display: inline-block;
+    width: 100px;
+}
+
+.login__input {
+    border: none;
+    outline: none;
+    width: 250px;
+    padding: 10px 20px 10px 10px;
+    border-radius: 5px;
+}
+
+.change__label {
+    width: 200px;
+}
+
+.login__input,
+.login__label {
+    font-size: 18px;
+    font-family: inherit;
+}
+
+.login__link {
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.login__link:hover {
+    color: #E8BA77;
+}
+
+.login__label_file {
+    padding: 15px 35px;
+    background: #0A3542;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.login__label_file:hover {
+    color: #0A3542;
+    background: white;
+}
+
+.login__button_file {
+    display: none;
+}
+
+.login__select {
+    width: 600px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+.login__option {}
+
+.login__option-block {}
+
+.login__name-film {}
+
+.login__text-film {}
+
+
+/* TODO: insert icon to button file */

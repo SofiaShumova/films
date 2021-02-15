@@ -1,0 +1,24 @@
+{% extends "./partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="../../styles/login.css">
+{% endblock %}
+{%block main %}
+    <main class="login">
+        <h1 class="login__title">Вход</h1>
+        <form action="/login" method="post">
+            <div class="login__box">
+                <label class="login__label" for="email">E-mail: </label>
+                <input class="login__input" type="email" name="email" id="email">
+            </div>
+            <div class="login__box">
+                <label class="login__label" for="password">Пароль: </label>
+                <input class="login__input" type="password" name="password" id="password">
+            </div>
+            <div class="login__box">
+                <button class="login__button" type="submit">Войти</button>
+                <button class="login__button" type="reset">Очистить</button>
+            </div>
+        </form>
+        <a href="/register" class="login__link">Регистрация</a>
+    </main>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "./partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="../../styles/account.css">
+{% endblock %}
+{%block main %}
+    {# TODO: view account page #}
+    <div class="user">
+        <div class="info">
+            <h2 class="info__text info__name">{{user.name}}</h2>
+            <p class="info__text info__email">Email: {{user.email}}</p>
+            <p class="info__text">
+                {%if user.isAdmin%}Вы являетесь админом{%else%}Вы не являетесь админом{%endif%}
+                </p>
+                <h3 class="info__text info__list-title">Доступные действия: </h3>
+                <ul class="action-list">
+                    {% for action in actions %}
+                        <li class="action-list__item">
+                            <a class="action-list__link" href="{{action.route}}">{{action.title}}</a>
+                        </li>
+                    {% else %}
+                        <li class="action-list__error">Доступные действия отсутствуют!</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <img class="user__img" src="{% if user.image %}{{user.image}}{%else%}/img/user.svg{% endif %}" alt="{{user.name}}">
+        </div>
+
+    {% endblock %}

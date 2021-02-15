@@ -1,0 +1,37 @@
+{% extends "./partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="./styles/catalogy.css">
+{% endblock %}
+{%block main %}
+    <ul class="catalogy__list">
+        {% for item in films %}
+            <li class="catalogy__item">
+                <a href="/catalogy/{{item._id}}" class="catalogy__link link-nostyle">
+                    <div class="catalogy__block-background"></div>
+                    <div class="catalogy__block">
+                        <a href="/catalogy/{{item._id}}" class="catalogy__link-img link-nostyle">
+                            <img src="{{item.image}}" alt="{{item.name}}" class="catalogy__img">
+                        </a>
+                        <div class="catalogy__decription-block">
+                            <span class="catalogy__name">{{item.name}}</span>
+                            <div class="catalogy__text-block">
+                                <p class="catalogy__text">
+                                    {{item.description}}
+                                </p>
+                            </div>
+                            <div class="catalogy__actions-block">
+                                <form action="catalogy/{{item._id}}" method="get" class="form">
+                                    <button type="submit" class="catalogy__button">Смотреть</button>
+                                </form>
+                                <a id="{{item._id}}" {% if (item.favorite===false) or (item.favorite === true) %} onclick="return handlerLink(event)" {%else%} href="/favorite/{{item._id}}" {% endif %} class="catalogy__fav-link link-nostyle {% if item.favorite %}catalogy__fav-link_selected {% endif %} "></a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {% else %}
+            <li class="catalogy__error">Фильмы в каталоге отсутствуют!</li>
+        {% endfor %}
+    </ul>
+    <script src="/scripts/fetchFavorite.js"></script>
+{% endblock %}

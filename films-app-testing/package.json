@@ -1,0 +1,19 @@
+{
+    "name": "films-app-testing",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "cucumber-js --publish"
+    },
+    "author": "SofiaShumova",
+    "license": "ISC",
+    "dependencies": {
+        "chromedriver": "^87.0.4",
+        "cucumber": "^7.0.0-rc.0",
+        "selenium-webdriver": "^4.0.0-alpha.8"
+    },
+    "devDependencies": {
+        "cucumber-pretty": "^6.0.0"
+    }
+}

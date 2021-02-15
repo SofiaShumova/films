@@ -1,0 +1,36 @@
+{% extends "./partials/template.njk" %}
+{%block style %}
+    <link rel="stylesheet" href="../../styles/favorite.css">
+{% endblock %}
+{%block main %}
+    {# TODO: view favorite page #}
+    <div class="favorite">
+        <ul class="favorite__list">
+            {% for item in films %}
+
+                <li class="favorite__item">
+
+                    <a href="catalogy/{{item._id}}" class="link-nostyle">
+                        <div class="favorite__block-background"></div>
+                        <img class="favorite__image" src="{{item.image}}" alt="{{item.name}}" >
+                    </a>
+                    <div class="favorite__block">
+                        <a href="catalogy/{{item._id}}" class="link-nostyle">
+                            <h3 class="favorite__name">{{item.name}}</h3>
+                            <p class="favorite__text">{{item.description}}</p>
+                        </a>
+                        <form action="catalogy/{{item._id}}" method="get" class="form">
+                            <button type="submit" class="favorite__button">Смотреть</button>
+                        </form>
+                    </div>
+
+                    <a href="/favorite/{{item._id}}/favorite">
+                        <img class="favorite__remove" src="/img/remove.svg" alt="remove">
+                    </a>
+                </li>
+            {% else %}
+                <li class="favorite__error">Фильмы в избранном отсутствуют!</li>
+            </ul>
+        </div>
+    {% endfor %}
+{% endblock %}

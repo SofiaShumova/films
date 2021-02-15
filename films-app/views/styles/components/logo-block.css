@@ -1,0 +1,15 @@
+.logo-block {
+    display: flex;
+    align-items: center
+}
+
+.logo-block__img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-block__name {
+    font-weight: 800;
+    font-size: 25px;
+    margin-left: 10px;
+}
